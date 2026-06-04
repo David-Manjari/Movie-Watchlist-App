@@ -1,0 +1,65 @@
+.form{
+    background-color: aliceblue;
+    width: 80vw;
+    height: 80vh;
+    padding-left: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.name-genre{
+    padding-bottom: 30px;
+    display: flex;
+    gap: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: large;
+}
+#movie{
+    border-radius: 5px;
+        width: 200px;
+        height: 20px;
+        justify-content: center;
+        border-color: rgb(155, 243, 214);
+        border-width: 4px;
+        border-top-color: rgb(141, 241, 241);
+}
+#genre{
+ border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    justify-content: center;
+    border-color: rgb(155, 243, 214);
+    border-width: 4px;
+    border-top-color: rgb(141, 241, 241);
+}
+
+.url-status{
+    padding-bottom: 30px;
+    display: flex;
+    gap: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: large;
+}
+#desc{
+    padding-bottom: 30px;
+    display: flex;
+    gap: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: large;
+}
+.form div button{
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: small;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
