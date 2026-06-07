@@ -41,7 +41,7 @@ function App(){
       }
   return(
     <div>
-      <MovieForm handleChange ={handleChange} handleSubmit={handleSubmit} InputValue = {movie}/>
+      <MovieForm handleChange ={handleChange} handleSubmit={handleSubmit} inputValue = {movie}/>
     </div>
   )
 }
