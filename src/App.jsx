@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MovieForm from "./components/addMovies-form";
+import MovieForm from "./components/AddMovieForm";
 
 import { getMovies } from "./services/movieApi";
 import { addMovie } from "./services/movieApi";
