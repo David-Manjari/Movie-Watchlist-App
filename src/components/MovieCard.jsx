@@ -1,18 +1,38 @@
-function MovieCard({ movie }) {
+import React from "react";
+
+function MovieCard({ movie, onDeleteMovie, onUpdateStatus }) {
+  const statusOptions = ["Want to Watch", "Watching", "Watched"];
+
   return (
-    <div
-      style={{
-        border: "1px solid gray",
-        margin: "10px",
-        padding: "10px",
-        borderRadius: "8px"
-      }}
-    >
-      <h3>{movie.title}</h3>
-      <p>Year: {movie.year}</p>
-      <p>Rating: {movie.rating}/5</p>
-      <p>Status: {movie.status}</p>
-    </div>
+    <article className="movie-card">
+      <img
+        src={movie.posterUrl || "https://placehold.co/300x400?text=No+Poster"}
+        alt={movie.title}
+      />
+      <div className="movie-card-content">
+        <h3>{movie.title}</h3>
+        <p>
+          {movie.genre} • {movie.releaseYear}
+        </p>
+        <p>Rating: {movie.rating}/10</p>
+        <p>Status: {movie.status}</p>
+        <div className="movie-card-actions">
+          <select
+            value={movie.status}
+            onChange={(e) => onUpdateStatus(movie.id, e.target.value)}
+          >
+            {statusOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <button type="button" className="delete" onClick={() => onDeleteMovie(movie.id)}>
+            Remove
+          </button>
+        </div>
+      </div>
+    </article>
   );
 }
 

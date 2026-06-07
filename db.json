@@ -19,26 +19,6 @@
       "status": "Want to Watch",
       "rating": 9,
       "description": "A skilled thief enters people's dreams to steal secrets."
-    },
-    {
-      "id": 3,
-      "title": "Interstellar",
-      "genre": "Sci-Fi",
-      "releaseYear": 2014,
-      "posterUrl": "https://placehold.co/300x400?text=Interstellar",
-      "status": "Watching",
-      "rating": 9,
-      "description": "Explorers travel through a wormhole in space to save humanity."
-    },
-    {
-      "title": "Dummy",
-      "genre": "Animation",
-      "releaseYear": "2020",
-      "posterUrl": "https://placehold.co/300x400?text=Interstellar",
-      "status": "",
-      "rating": "6",
-      "description": "this is a dummy movie to test submission to the api",
-      "id": 4
     }
   ]
 }
