@@ -24,6 +24,15 @@ function MovieForm({handleChange,handleSubmit,inputValue}){
                         </select>
                     </label>
               </div>
+              <div id="rate-year">
+                    <label htmlFor="releaseYear">Release Year :
+                        <input type="text" name="releaseYear" id="releaseYear" placeholder="Enter Year Released" value={inputValue.releaseYear} onChange={handleChange}/>
+                    </label>
+                    <label htmlFor="rating">Ratings :
+                        <input type="number" name="rating" id="rating" placeholder="Rate Movie" value={inputValue.rating} onChange={handleChange} />
+                    </label>
+
+              </div>
                 
                 <div className="url-status">
                     <label htmlFor="posterUrl">Image Url <input type="url" name="posterUrl" id="posterUrl" placeholder="Enter Poster url" 
