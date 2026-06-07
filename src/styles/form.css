@@ -28,6 +28,14 @@
         border-width: 4px;
         border-top-color: rgb(141, 241, 241);
 }
+#rate-year{
+    padding-bottom: 30px;
+    display: flex;
+    gap: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: large;
+}
 #genre{
  border-radius: 5px;
     width: 150px;
