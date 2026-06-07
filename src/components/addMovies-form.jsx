@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/form.css'
 
-function AddMovies(){
+function MovieForm(){
 
     return(
         <div>

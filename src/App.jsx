@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import AddMovies from "./components/addMovies-form";
+import MovieForm from "./components/addMovies-form";
 
 import { getMovies } from "./services/movieApi";
+import { addMovie } from "./services/movieApi";
 function App(){
 
   // code to get content from the form
@@ -12,7 +13,7 @@ function App(){
     "description":"",
 })
 
-    function handleSubmit(event){
+    function handleChange(event){
       setMovie({...movie, [event.target.name]:event.target.value})
     }
 
@@ -24,9 +25,16 @@ function App(){
       })
     },[])
 
+    // code to handle submit and post changes to the api
+      function handleSubmit(event){
+        addMovie(movie)
+        .then((data) => {
+          setUpdade([...update,data])
+        })
+      }
   return(
     <div>
-      <AddMovies/>
+      <MovieForm/>
     </div>
   )
 }
