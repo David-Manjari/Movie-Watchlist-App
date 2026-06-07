@@ -1,11 +1,11 @@
 import React from "react";
 import '../styles/form.css'
 
-function MovieForm(){
+function MovieForm({handleChange,handleSubmit}){
 
     return(
         <div>
-            <form className="form">
+            <form className="form" onSubmit={handleSubmit}>
                 <h2>Add a Movie</h2>
               <div className="name-genre">
                     <label htmlFor="movie">Movie : <input type="text" id="movie" placeholder="Enter Movie Title" /></label>
