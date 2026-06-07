@@ -31,6 +31,13 @@ function App(){
         .then((data) => {
           setUpdade([...update,data])
         })
+        // code to update the parameters for forms
+        setMovie({
+          "title": "", "genre": "Action",
+          "releaseYear": "", "posterUrl": "",
+          "status": "Completed", "rating": "",
+          "description": "",
+        })
       }
   return(
     <div>
