@@ -54,4 +54,4 @@ function MovieForm({handleChange,handleSubmit,inputValue}){
     )
 }
 
-export default AddMovies;
+export default MovieForm;
