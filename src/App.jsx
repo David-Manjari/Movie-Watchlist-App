@@ -27,17 +27,23 @@ function App(){
 
     // code to handle submit and post changes to the api
       function handleSubmit(event){
+        event.preventDefault();
         // condition to check all inputs are filled
         (movie.title !== "" && movie.releaseYear !== "" &&
           movie.description !== "" && movie.rating !== ""
-        )?
+        )? (
+          addMovie(movie)
+            .then((data) => {
+              setUpdade([...update, data])
+            })
         // code to update the parameters for forms
-        setMovie({
-          "title": "", "genre": "Action",
-          "releaseYear": "", "posterUrl": "",
-          "status": "Completed", "rating": "",
-          "description": "",
-        }) : alert("Fill in all the required fields ")
+              (setMovie({
+                "title": "", "genre": "Action",
+                "releaseYear": "", "posterUrl": "",
+                "status": "Completed", "rating": "",
+                "description": "",
+              }))
+        ): alert("Fill in all the required fields ")
       }
   return(
     <div>
