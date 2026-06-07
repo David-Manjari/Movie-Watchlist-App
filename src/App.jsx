@@ -1,5 +1,5 @@
 import React from "react";
-import AddMovies from "./components/addMovies-form";
+import AddMovies from "./components/AddMovieForm";
 
 
 function App(){
