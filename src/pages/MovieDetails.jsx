@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getMovieById, updateMovieStatus } from "../services/movieApi";
 import WatchStatus from "../components/WatchStatus";
 
@@ -18,19 +18,30 @@ function MovieDetails() {
   }
 
   if (!movie) {
-    return <p>Loading movie...</p>;
+    return <p className="loading-text">Loading movie...</p>;
   }
 
   return (
-    <div className="movie-details">
-      <h2>{movie.title}</h2>
-      <img src={movie.posterUrl} alt={movie.title} />
-      <p>Genre: {movie.genre}</p>
-      <p>Release Year: {movie.releaseYear}</p>
-      <p>Rating: {movie.rating}</p>
-      <p>{movie.description}</p>
-      <WatchStatus status={movie.status} onStatusChange={handleStatusChange} />
-    </div>
+    <section className="page-content movie-details-page">
+      <div className="detail-card">
+        <div className="detail-media">
+          <img src={movie.posterUrl} alt={movie.title} />
+        </div>
+        <div className="detail-content">
+          <Link to="/search" className="button button-soft back-link">
+            ← Back to search
+          </Link>
+          <h2>{movie.title}</h2>
+          <div className="detail-meta">
+            <span>{movie.genre}</span>
+            <span>{movie.releaseYear}</span>
+            <span>Rating: {movie.rating}/10</span>
+          </div>
+          <p>{movie.description}</p>
+          <WatchStatus status={movie.status} onStatusChange={handleStatusChange} />
+        </div>
+      </div>
+    </section>
   );
 }
 
