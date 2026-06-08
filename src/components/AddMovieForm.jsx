@@ -1,5 +1,4 @@
 import React from "react";
-import '../styles/form.css'
 
 function MovieForm({handleChange,handleSubmit,inputValue}){
 
@@ -13,14 +12,16 @@ function MovieForm({handleChange,handleSubmit,inputValue}){
                         value={inputValue.title}
                         onChange={handleChange}
                         /></label>
-                    <label htmlFor="genre">Add a Movie:
+                    <label htmlFor="genre">Genre:
 
                         <select name="genre" id="genre" value={inputValue.genre} onChange={handleChange}>
+                            <option value="">Select genre</option>
                             <option value="Action">Action</option>
                             <option value="Drama">Drama</option>
                             <option value="Animation">Animation</option>
                             <option value="Crime">Crime</option>
                             <option value="Fantasy">Fantasy</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
                         </select>
                     </label>
               </div>
@@ -41,9 +42,10 @@ function MovieForm({handleChange,handleSubmit,inputValue}){
                     /></label>
                     <label htmlFor="status"> Choose Status :
                         <select name="status" id="status" value={inputValue.status} onChange={handleChange}>
-                            <option value="Completed">Completed</option>
+                            <option value="">Select status</option>
+                            <option value="Want to Watch">Want to Watch</option>
+                            <option value="Watching">Watching</option>
                             <option value="Watched">Watched</option>
-                            <option value="Ongoing">OnGoing</option>
                         </select>
                     </label>
 
