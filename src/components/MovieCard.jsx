@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function MovieCard({ movie, onDeleteMovie, onUpdateStatus }) {
   const statusOptions = ["Want to Watch", "Watching", "Watched"];
@@ -17,6 +18,9 @@ function MovieCard({ movie, onDeleteMovie, onUpdateStatus }) {
         <p>Rating: {movie.rating}/10</p>
         <p>Status: {movie.status}</p>
         <div className="movie-card-actions">
+          <Link to={`/movies/${movie.id}`} className="details-link">
+            View details
+          </Link>
           <select
             value={movie.status}
             onChange={(e) => onUpdateStatus(movie.id, e.target.value)}

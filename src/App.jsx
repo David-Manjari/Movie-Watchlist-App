@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import MovieForm from "./components/AddMovieForm";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import AddMoviePage from "./pages/AddMovie";
 import MovieDetails from "./pages/MovieDetails";
-import MovieList from "./components/MovieList";
 
 import {
   getMovies,
@@ -20,7 +23,7 @@ function App() {
     genre: "",
     releaseYear: "",
     posterUrl: "",
-    status: "",
+    status: "Want to Watch",
     rating: "",
     description: "",
   });
@@ -65,7 +68,7 @@ function App() {
           genre: "",
           releaseYear: "",
           posterUrl: "",
-          status: "",
+          status: "Want to Watch",
           rating: "",
           description: "",
         });
@@ -105,35 +108,44 @@ function App() {
   }
 
   return (
-
-    <div>
-
-      <Routes>
-
-        <Route
-          path="/"
-          element={
-            <MovieForm
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              inputValue={movie}
-            />
-          }
-        />
-
-        <Route
-          path="/movies/:id"
-          element={<MovieDetails />}
-        />
-
-      </Routes>
-
-      <MovieList
-        movies={movies}
-        onDeleteMovie={handleDeleteMovie}
-        onUpdateStatus={handleUpdateStatus}
-      />
-
+    <div className="app-shell">
+      <Navbar />
+      <main className="app-content">
+        <Routes>
+          <Route path="/" element={<Home movies={movies} />} />
+          <Route
+            path="/search"
+            element={
+              <Search
+                movies={movies}
+                onDeleteMovie={handleDeleteMovie}
+                onUpdateStatus={handleUpdateStatus}
+              />
+            }
+          />
+          <Route
+            path="/add"
+            element={
+              <AddMoviePage
+                movie={movie}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+              />
+            }
+          />
+          <Route path="/movies/:id" element={<MovieDetails />} />
+          <Route
+            path="*"
+            element={
+              <section className="page-content not-found-page">
+                <h2>Page not found</h2>
+                <p>The page you are looking for does not exist.</p>
+              </section>
+            }
+          />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard";
 
-function MovieList({ movies , onDeleteMovie, onUpdateStatus}) {
+function MovieList({ movies, onDeleteMovie, onUpdateStatus }) {
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="movie-list">
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} onDeleteMovie={onDeleteMovie} onUpdateStatus={onUpdateStatus} />
       ))}
